@@ -3,6 +3,8 @@ package woni.FireFighter;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +14,6 @@ import android.widget.ListView;
 public class FireFighterActivity extends Activity {
 	
 	final String url = "http://178.188.171.236/rpweb/onlinestatus.aspx?form=EVENT&bez=RA";
-	final Activity activity = this;
 	
     /** Called when the activity is first created. */
     @Override
@@ -20,12 +21,7 @@ public class FireFighterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        try {
-        	onRefresh();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        onRefresh();
     }
     
     public void onRefresh(View v){
@@ -38,10 +34,10 @@ public class FireFighterActivity extends Activity {
         final LinearLayout progress = (LinearLayout)findViewById(R.id.progress);
         progress.setVisibility(View.VISIBLE);
     	
-    	RetreiveMissionsTask task = new RetreiveMissionsTask();
+    	RetreiveMissionsTask task = new RetreiveMissionsTask(this);
     	task.setOnDocumentUpdateListener(new MissionReceivedListener(){
 
-			public void onMissionsReceived(List<Mission> missions) {
+			public void onCompleted(Activity activity, List<Mission> missions) {
 		        ListView bookListView =(ListView)findViewById(R.id.bookListView);
 		        
 		        LitemItemAdapter mcqListAdapter = new LitemItemAdapter(activity,R.layout.row,missions.toArray(new Mission[missions.size()]));
@@ -50,10 +46,22 @@ public class FireFighterActivity extends Activity {
 		        progress.setVisibility(View.GONE);
 		        refresh.setVisibility(View.VISIBLE);
 			}
+
+			public void onFailed(Activity activity, Exception exception) {
+				// TODO Auto-generated method stub
+				new AlertDialog.Builder(activity)
+					.setMessage("Einsätze konnten nicht geladen werden. Bitte versuchen Sie es später erneut.")
+					.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+						
+						public void onClick(DialogInterface dialog, int which) {
+							// TODO Auto-generated method stub
+							
+						}
+					}).show();
+			}
     		
     	});
     		
     	task.execute(url);
-    	
     }
 }

@@ -1,10 +1,5 @@
 package woni.FireFighter;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +8,18 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 
 class RetreiveMissionsTask extends AsyncTask<String, Void, List<Mission>> {
 
 	private Exception exception;
-	ArrayList<MissionReceivedListener> listeners = new ArrayList<MissionReceivedListener>();
+	private Activity activity;
+	private ArrayList<MissionReceivedListener> listeners = new ArrayList<MissionReceivedListener>();
+
+	public RetreiveMissionsTask(Activity activity) {
+		this.activity = activity;
+	}
 
 	protected List<Mission> doInBackground(String... url) {
 		try {
@@ -51,21 +52,15 @@ class RetreiveMissionsTask extends AsyncTask<String, Void, List<Mission>> {
 	}
 
 	protected void onPostExecute(List<Mission> missions) {
-		// TODO: check this.exception
-		if (exception == null) {
-			for (MissionReceivedListener listener : listeners) {
-				listener.onMissionsReceived(missions);
+		for (MissionReceivedListener listener : listeners) {
+			if (exception != null) {
+				listener.onFailed(activity, exception);
 			}
-		} else {
-			
-			
+			listener.onCompleted(activity, missions);
 		}
-
 	}
 
 	public void setOnDocumentUpdateListener(MissionReceivedListener listener) {
-		// Store the listener object
 		this.listeners.add(listener);
 	}
-
 }
