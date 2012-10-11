@@ -29,10 +29,12 @@ public class FireFighterActivity extends Activity {
     }
     
     private void onRefresh(){
-    	final Button refresh = (Button)findViewById(R.id.button1);
-    	refresh.setVisibility(View.GONE);
-        final LinearLayout progress = (LinearLayout)findViewById(R.id.progress);
+        final View progress = findViewById(R.id.progress);
         progress.setVisibility(View.VISIBLE);
+    	final View refresh = findViewById(R.id.refresh);
+    	refresh.setVisibility(View.GONE);
+        final View connectionlost = findViewById(R.id.connectionLost);
+        connectionlost.setVisibility(View.GONE);
     	
     	RetreiveMissionsTask task = new RetreiveMissionsTask(this);
     	task.setOnDocumentUpdateListener(new MissionReceivedListener(){
@@ -48,16 +50,7 @@ public class FireFighterActivity extends Activity {
 			}
 
 			public void onFailed(Activity activity, Exception exception) {
-				// TODO Auto-generated method stub
-				new AlertDialog.Builder(activity)
-					.setMessage("Einsätze konnten nicht geladen werden. Bitte versuchen Sie es später erneut.")
-					.setNeutralButton("OK", new DialogInterface.OnClickListener() {
-						
-						public void onClick(DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
-							
-						}
-					}).show();
+				connectionlost.setVisibility(View.VISIBLE);
 			}
     		
     	});
