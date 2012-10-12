@@ -37,7 +37,8 @@
                 android:text="Aktualisieren"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
-
+
+
         <LinearLayout
             android:id="@+id/progress"
             android:layout_width="match_parent"
@@ -55,7 +56,7 @@
                 android:layout_height="fill_parent"
                 android:gravity="center_vertical|center_horizontal"
                 android:padding="5dp"
-                android:text="Einsätze werden geladen"
+                android:text="@string/eins_tze_werden_geladen"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
 
@@ -76,19 +77,17 @@
         android:visibility="gone" >
 
         <TextView
-            android:id="@+id/progress_Text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Verbindung fehlgeschlagen"
+            android:text="@string/verbindung_fehlgeschlagen"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
-            android:id="@+id/progress_Text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal"
-            android:text="Zum Wiederholen tippen"
+            android:text="@string/zum_wiederholen_tippen"
             android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>
 
