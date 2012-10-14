@@ -29,7 +29,9 @@ public class LitemItemAdapter extends ArrayAdapter<Mission>{
         }
         Mission item = missions[position];
         if (item != null) {
-        	SetView(v, R.id.alarm, item.getCommand());
+        	String alarm = item.getAlarm();
+        	
+        	SetView(v, R.id.alarm, AlarmCategories.getCategoryByKey(alarm).getText());
         	SetView(v, R.id.date, item.getDate());
         	SetView(v, R.id.time, item.getTime());
         	SetView(v, R.id.station, item.getStation());

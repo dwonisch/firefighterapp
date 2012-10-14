@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="B01">Brandverdacht-Rauchentwicklung</string>
+    <string name="B02">Müllkübel / Containerbrand</string>
+    <string name="B03">Rauchfangbrand</string>
+    <string name="B04">Elektrische Anlagen</string>
+    <string name="B05">Zimmerbrand</string>
+    <string name="B06">Brandmeldealarm</string>
+    <string name="B07">Gasbrand, Gasaustritt, Gasunfall</string>
+    <string name="B08">Fahrzeugbrand</string>
+    <string name="B09">Hecken-, Wiesen-, Wald- und Böschungsbrand</string>
+    <string name="B10">Keller- und Tiefgarangenbrand</string>
+    <string name="B11">Brand Schienenfahrzeug</string>
+    <string name="B12">Wohnhausbrand</string>
+    <string name="B13">Wirtschaftsgebäudebrand</string>
+    <string name="B14">Schulen, Kindergärten, Beherbergung, Veranstaltungshalle, Altenheim</string>
+    <string name="B15">Industrie-, Werkstätten und Sägewerksbrand, Tankestelle, Heizhaus</string>
+    <string name="B16">Tunnelbrand</string>
+    <string name="B17">Hochhausbrand</string>
+    <string name="T01">sonstige Hilfeleistung / Gerätebereitstellung</string>
+    <string name="T02">Türöffnung, Personenrettung aus Lift</string>
+    <string name="T03">Verkehrsunfall, Fahrzeugbergung, binden von Betriebsmittel</string>
+    <string name="T04">Auspumparbeiten</string>
+    <string name="T05">Insektenbekämpfung</string>
+    <string name="T06">Suchaktion</string>
+    <string name="T07">Unwettereinsatz, Elementare Ereignisse</string>
+    <string name="T08">Tierrettung</string>
+    <string name="T09">Wasserdienst</string>
+    <string name="T10">Verkehrsunfall mit eingeklemmter Person</string>
+    <string name="T11">Menschenrettung</string>
+    <string name="T12">Busunfall</string>
+    <string name="T13">Unfall Schienenfahrzeug</string>
+    <string name="T14">Verkehrsunfall Autobahn</string>
+    <string name="T15">Verkehrsunfall Tunnel</string>
+    <string name="T16">Flugunfall</string>
+    <string name="T17">Schadstoffeinsatz (Öl, Gefährliche Stoffe)</string>
+
+</resources>

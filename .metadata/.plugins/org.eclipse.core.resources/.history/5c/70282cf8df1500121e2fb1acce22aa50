@@ -1,0 +1,7 @@
+package woni.FireFighter;
+
+public class AlarmCategories {
+	public AlarmCategories(){
+		
+	}
+}

@@ -1,0 +1,17 @@
+package woni.FireFighter;
+
+public class AlarmCategories {
+	public AlarmCategories(){
+		
+	}
+	
+	private Dictionary<String, AlarmCategory> categories;
+	
+	public static AlarmCategory getCategoryByKey(String Key){
+		if(categories == null){
+			categories = new Dictionary<String, AlarmCategory>();
+			
+		}
+		return new AlarmCategory("");
+	}
+}

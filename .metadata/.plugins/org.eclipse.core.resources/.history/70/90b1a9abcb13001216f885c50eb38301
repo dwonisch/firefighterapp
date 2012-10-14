@@ -1,0 +1,10 @@
+package woni.FireFighter;
+
+import java.util.List;
+
+public interface MissionReceivedListener 
+{
+    void onCompleted(List<Mission> missions);
+    void onFailed(Exception exception);
+}
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, FireFighterActivity!</string>
+    <string name="app_name">FireFighter</string>
+    <string name="verbindung_fehlgeschlagen">Verbindung fehlgeschlagen</string>
+    <string name="zum_wiederholen_tippen">Zum Wiederholen tippen</string>
+    <string name="eins_tze_werden_geladen">Einsätze werden geladen</string>
+    <string name="aktualisieren">Aktualisieren</string>
+
+</resources>

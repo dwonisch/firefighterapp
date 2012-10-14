@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
-                android:contentDescription="Refresh"
+                android:contentDescription="@string/aktualisieren"
                 android:src="@drawable/refresh" />
 
             <TextView
@@ -34,7 +34,7 @@
                 android:layout_height="fill_parent"
                 android:gravity="center_vertical|center_horizontal"
                 android:padding="10dp"
-                android:text="Aktualisieren"
+                android:text="@string/aktualisieren"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
 

@@ -1,0 +1,6 @@
+package woni.FireFighter;
+
+public class AlarmCategory {
+	private String key;
+	private String text;
+}

@@ -1,0 +1,15 @@
+1349977393669	Rename method 'onMissionsReceived'
+1349977399680	Rename method 'onReadFailed'
+1350049883072	Extracts string 'Verbindung fehlgeschlagen' into R.string.verbindung_fehlgeschlagen
+1350049887743	Extracts string 'Zum Wiederholen tippen' into R.string.zum_wiederholen_tippen
+1350049908479	Extracts string 'Einsätze werden geladen' into R.string.eins_tze_werden_geladen
+1350049913114	Extracts string 'Aktualisieren' into R.string.aktualisieren
+1350052118219	Delete element
+1350204082745	Delete element
+1350204118342	Copy file
+1350205090656	Rename field 'command'
+1350205099568	Rename method 'getCommand'
+1350205893106	Rename type 'AlarmCategories'
+1350206060540	Delete element
+1350207013293	Extract local variable 'subSequence'
+1350207524934	Delete element
