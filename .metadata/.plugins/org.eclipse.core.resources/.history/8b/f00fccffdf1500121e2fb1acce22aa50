@@ -1,9 +1,0 @@
-package woni.FireFighter;
-
-public class AlarmCategories {
-	public AlarmCategories(){
-		
-	}
-	
-	public static AlarmCategory getCategoryByKey(string Key)
-}
