@@ -1,15 +1,13 @@
 package woni.FireFighter;
 
-import java.util.List;
+import com.egoclean.android.widget.flinger.ViewFlinger;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListView;
 
 public class FireFighterActivity extends Activity {
-	
-	final String url = "http://178.188.171.236/rpweb/onlinestatus.aspx?form=EVENT&bez=RA";
+	ViewFlinger flinger;
 	
     /** Called when the activity is first created. */
     @Override
@@ -17,40 +15,36 @@ public class FireFighterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        onRefresh();
+        flinger = (ViewFlinger)findViewById(R.id.views);
+        flinger.addView(createView("RA"));
+        flinger.addView(createView("LB"));
+        
+        onRefresh(null);
     }
     
-    public void onRefresh(View v){
-    	onRefresh();
+    private View createView(String area){
+    	AlarmView view = new AlarmView(this,area);
+    	view.setLoadedListener(new AlarmViewLoadedListener() {
+			
+			public void onLoaded() {
+				// TODO Auto-generated method stub
+				View progress = findViewById(R.id.progress);
+				progress.setVisibility(View.GONE);
+				View refresh = findViewById(R.id.refresh);
+				refresh.setVisibility(View.VISIBLE);
+			}
+		});
+    	return view;
     }
     
-    private void onRefresh(){
-        final View progress = findViewById(R.id.progress);
-        progress.setVisibility(View.VISIBLE);
-    	final View refresh = findViewById(R.id.refresh);
-    	refresh.setVisibility(View.GONE);
-        final View connectionlost = findViewById(R.id.connectionLost);
-        connectionlost.setVisibility(View.GONE);
-    	
-    	RetreiveMissionsTask task = new RetreiveMissionsTask(this);
-    	task.setOnDocumentUpdateListener(new MissionReceivedListener(){
 
-			public void onCompleted(Activity activity, List<Mission> missions) {
-		        ListView bookListView =(ListView)findViewById(R.id.bookListView);
-		        
-		        LitemItemAdapter mcqListAdapter = new LitemItemAdapter(activity,R.layout.row,missions.toArray(new Mission[missions.size()]));
-		        bookListView.setAdapter(mcqListAdapter);
-		        
-		        progress.setVisibility(View.GONE);
-		        refresh.setVisibility(View.VISIBLE);
-			}
-
-			public void onFailed(Activity activity, Exception exception) {
-				connectionlost.setVisibility(View.VISIBLE);
-			}
-    		
-    	});
-    		
-    	task.execute(url);
+	public void onRefresh(View v){
+		View progress = findViewById(R.id.progress);
+		progress.setVisibility(View.VISIBLE);
+		View refresh = findViewById(R.id.refresh);
+		refresh.setVisibility(View.GONE);
+		
+    	AlarmView view = (AlarmView)flinger.getCurrentScreen();
+    	view.onRefresh();
     }
 }

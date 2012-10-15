@@ -3,10 +3,11 @@ package woni.FireFighter;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Context;
 
 public interface MissionReceivedListener 
 {
-    void onCompleted(Activity activity, List<Mission> missions);
-    void onFailed(Activity activity, Exception exception);
+    void onCompleted(Context activity, List<Mission> missions);
+    void onFailed(Context activity, Exception exception);
 }
 

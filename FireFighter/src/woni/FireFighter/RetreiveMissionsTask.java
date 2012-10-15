@@ -9,15 +9,16 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.AsyncTask;
 
 class RetreiveMissionsTask extends AsyncTask<String, Void, List<Mission>> {
 
 	private Exception exception;
-	private Activity activity;
+	private Context activity;
 	private ArrayList<MissionReceivedListener> listeners = new ArrayList<MissionReceivedListener>();
 
-	public RetreiveMissionsTask(Activity activity) {
+	public RetreiveMissionsTask(Context activity) {
 		this.activity = activity;
 	}
 
