@@ -15,18 +15,19 @@ public class AlarmView extends LinearLayout {
 	Context context;
 	final String url;
 	private ArrayList<AlarmViewLoadedListener> listeners = new ArrayList<AlarmViewLoadedListener>();
+	private Boolean isLoaded = false;
 
-	public AlarmView(Context context, String url) {
+	public AlarmView(Context context, District district) {
 		super(context);
 		this.context = context;
 		LayoutInflater inflater = LayoutInflater.from(context);
 		inflater.inflate(R.layout.alarmview, this);
 		this.url = String
 				.format("http://178.188.171.236/rpweb/onlinestatus.aspx?form=EVENT&bez=%s",
-						url);
+						district.getShortText());
 
 		TextView view = (TextView) findViewById(R.id.title);
-		view.setText(url);
+		view.setText(district.getLongText());
 	}
 
 	public AlarmView(Context context, AttributeSet attrs) {
@@ -35,12 +36,13 @@ public class AlarmView extends LinearLayout {
 		LayoutInflater inflater = LayoutInflater.from(context);
 		inflater.inflate(R.layout.alarmview, this);
 		this.url = "http://178.188.171.236/rpweb/onlinestatus.aspx?form=EVENT&bez=RA";
-		
+
 		TextView view = (TextView) findViewById(R.id.title);
 		view.setText(url);
 	}
 
 	public void onRefresh() {
+		isLoaded = true;
 		final View connectionlost = findViewById(R.id.connectionLost);
 		connectionlost.setVisibility(View.GONE);
 
@@ -67,14 +69,17 @@ public class AlarmView extends LinearLayout {
 		task.execute(url);
 	}
 	
-	public void setLoadedListener(AlarmViewLoadedListener listener){
+	public Boolean getIsLoaded(){
+		return isLoaded;
+	}
+
+	public void setLoadedListener(AlarmViewLoadedListener listener) {
 		listeners.add(listener);
 	}
-	
-	private void onLoaded(){
-		for(AlarmViewLoadedListener listener : listeners){
+
+	private void onLoaded() {
+		for (AlarmViewLoadedListener listener : listeners) {
 			listener.onLoaded();
 		}
-		
 	}
 }

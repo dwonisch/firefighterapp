@@ -1,6 +1,7 @@
 package woni.FireFighter;
 
 import com.egoclean.android.widget.flinger.ViewFlinger;
+import com.egoclean.android.widget.flinger.ViewFlinger.OnScreenChangeListener;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -16,14 +17,45 @@ public class FireFighterActivity extends Activity {
         setContentView(R.layout.main);
         
         flinger = (ViewFlinger)findViewById(R.id.views);
-        flinger.addView(createView("RA"));
-        flinger.addView(createView("LB"));
+        flinger.setOnScreenChangeListener(new OnScreenChangeListener() {
+			
+			public void onScreenChanging(View newScreen, int newScreenIndex) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void onScreenChanged(View newScreen, int newScreenIndex) {
+				// TODO Auto-generated method stub
+				if(newScreen != null){
+					AlarmView alarms = (AlarmView)newScreen;
+					if(!alarms.getIsLoaded())
+						onRefresh();
+					}
+			}
+		});
         
-        onRefresh(null);
+        flinger.addView(createView("RA", "Bereich Radkersburg"));
+        flinger.addView(createView("VO", "Bereich Voitsberg"));
+        flinger.addView(createView("WZ", "Bereich Weiz"));
+        flinger.addView(createView("BM", "Bereich Bruck an der Mur"));
+        flinger.addView(createView("DL", "Bereich Deutschlandsberg"));
+        flinger.addView(createView("FB", "Bereich Feldbach"));
+        flinger.addView(createView("FF", "Bereich Fürstenfeld"));
+        flinger.addView(createView("GU", "Bereich Graz Umgebung"));
+        flinger.addView(createView("HB", "Bereich Hartberg"));
+        flinger.addView(createView("JU", "Bereich Judenburg"));
+        flinger.addView(createView("KF", "Bereich Knittelfeld"));
+        flinger.addView(createView("LB", "Bereich Leibnitz"));
+        flinger.addView(createView("LE", "Bereich Leoben"));
+        flinger.addView(createView("LI", "Bereich Liezen"));
+        flinger.addView(createView("MU", "Bereich Murau"));
+        flinger.addView(createView("MZ", "Bereich Mürzzuschlag"));
+        
+        onRefresh();
     }
     
-    private View createView(String area){
-    	AlarmView view = new AlarmView(this,area);
+    private View createView(String shortText, String longText){
+    	AlarmView view = new AlarmView(this,new District(shortText, longText));
     	view.setLoadedListener(new AlarmViewLoadedListener() {
 			
 			public void onLoaded() {
@@ -37,14 +69,21 @@ public class FireFighterActivity extends Activity {
     	return view;
     }
     
+	public void onRefresh(){
+		onRefresh((AlarmView)flinger.getCurrentScreen());
+	}
 
 	public void onRefresh(View v){
+		onRefresh();
+    }
+	
+	private void onRefresh(AlarmView view){
 		View progress = findViewById(R.id.progress);
 		progress.setVisibility(View.VISIBLE);
 		View refresh = findViewById(R.id.refresh);
 		refresh.setVisibility(View.GONE);
 		
-    	AlarmView view = (AlarmView)flinger.getCurrentScreen();
-    	view.onRefresh();
-    }
+    	AlarmView v = view;
+    	v.onRefresh();
+	}
 }
