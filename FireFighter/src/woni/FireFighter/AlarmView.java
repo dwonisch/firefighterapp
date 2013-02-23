@@ -16,6 +16,7 @@ public class AlarmView extends LinearLayout {
 	final String url;
 	private ArrayList<AlarmViewLoadedListener> listeners = new ArrayList<AlarmViewLoadedListener>();
 	private Boolean isLoaded = false;
+	private String shortDistrictName;
 
 	public AlarmView(Context context, District district) {
 		super(context);
@@ -25,6 +26,8 @@ public class AlarmView extends LinearLayout {
 		this.url = String
 				.format("http://178.188.171.236/rpweb/onlinestatus.aspx?form=EVENT&bez=%s",
 						district.getShortText());
+		
+		shortDistrictName = district.getShortText();
 
 		TextView view = (TextView) findViewById(R.id.title);
 		view.setText(district.getLongText());
@@ -81,5 +84,9 @@ public class AlarmView extends LinearLayout {
 		for (AlarmViewLoadedListener listener : listeners) {
 			listener.onLoaded();
 		}
+	}
+	
+	public String getDistrict(){
+		return shortDistrictName;	
 	}
 }

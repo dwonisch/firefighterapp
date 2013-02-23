@@ -889,6 +889,10 @@ public class ViewFlinger extends ViewGroup {
             mOnScrollListener.onScroll(getCurrentScreenFraction());
         }
     }
+    
+    public void setCurrentScreen(View view){
+    	setCurrentScreen(indexOfChild(view));
+    }
 
     /**
      * Scrolls to the given screen.

@@ -1,17 +1,24 @@
 package woni.FireFighter;
 
+import java.util.Hashtable;
+
 import com.egoclean.android.widget.flinger.ViewFlinger;
 import com.egoclean.android.widget.flinger.ViewFlinger.OnScreenChangeListener;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 
 public class FireFighterActivity extends Activity {
-	ViewFlinger flinger;
-	
+	private ViewFlinger flinger;
+	private static String SettingsFile = "FireFighter.settings";
+	private static String LastSelectedDistrictKey = "LastSelectedDistrict";
+    private Hashtable<String, View> viewCache = new Hashtable<String, View>();
+    
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,7 +39,12 @@ public class FireFighterActivity extends Activity {
 					AlarmView alarms = (AlarmView)newScreen;
 					if(!alarms.getIsLoaded())
 						onRefresh();
-					}
+					
+					SharedPreferences settings = getSharedPreferences(SettingsFile, 0);
+					Editor editor = settings.edit();
+					editor.putString(LastSelectedDistrictKey, alarms.getDistrict());
+					editor.commit();
+				}
 			}
 		});
         
@@ -53,6 +65,12 @@ public class FireFighterActivity extends Activity {
         flinger.addView(createView("MU", "Bereich Murau"));
         flinger.addView(createView("MZ", "Bereich Mürzzuschlag"));
         
+        SharedPreferences settings = getSharedPreferences(SettingsFile, 0);
+
+        String lastDistrict = settings.getString(LastSelectedDistrictKey, "RA");
+        
+        flinger.setCurrentScreen(viewCache.get(lastDistrict));
+        
         onRefresh();
     }
     
@@ -66,18 +84,22 @@ public class FireFighterActivity extends Activity {
     }
     
     private View createView(String shortText, String longText){
-    	AlarmView view = new AlarmView(this,new District(shortText, longText));
-    	view.setLoadedListener(new AlarmViewLoadedListener() {
-			
-			public void onLoaded() {
-				// TODO Auto-generated method stub
-				View progress = findViewById(R.id.progress);
-				progress.setVisibility(View.GONE);
-				View refresh = findViewById(R.id.refresh);
-				refresh.setVisibility(View.VISIBLE);
-			}
-		});
-    	return view;
+    	if(!viewCache.containsKey(shortText)){
+	    	AlarmView view = new AlarmView(this,new District(shortText, longText));
+	    	view.setLoadedListener(new AlarmViewLoadedListener() {
+				
+				public void onLoaded() {
+					// TODO Auto-generated method stub
+					View progress = findViewById(R.id.progress);
+					progress.setVisibility(View.GONE);
+					View refresh = findViewById(R.id.refresh);
+					refresh.setVisibility(View.VISIBLE);
+				}
+			});
+	    	
+	    	viewCache.put(shortText,  view);
+    	}
+    	return viewCache.get(shortText);
     }
     
 	public void onRefresh(){
