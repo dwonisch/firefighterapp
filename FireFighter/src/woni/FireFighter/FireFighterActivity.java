@@ -5,6 +5,8 @@ import com.egoclean.android.widget.flinger.ViewFlinger.OnScreenChangeListener;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
 public class FireFighterActivity extends Activity {
@@ -54,6 +56,15 @@ public class FireFighterActivity extends Activity {
         onRefresh();
     }
     
+    // Initiating Menu XML file (menu.xml)
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.layout.menu, menu);
+        return true;
+    }
+    
     private View createView(String shortText, String longText){
     	AlarmView view = new AlarmView(this,new District(shortText, longText));
     	view.setLoadedListener(new AlarmViewLoadedListener() {
@@ -85,5 +96,9 @@ public class FireFighterActivity extends Activity {
 		
     	AlarmView v = view;
     	v.onRefresh();
+	}
+	
+	public void onSettingsClick(View view){
+		
 	}
 }
