@@ -16,36 +16,33 @@ public final class R {
         public static final int refresh=0x7f020002;
     }
     public static final class id {
-        public static final int alarm=0x7f060010;
-        public static final int bookListView=0x7f060003;
-        public static final int connectionLost=0x7f060002;
-        public static final int date=0x7f06000b;
-        public static final int linearLayout1=0x7f06000a;
-        public static final int linearLayout2=0x7f060013;
-        public static final int menu_settings=0x7f060014;
-        public static final int progress=0x7f060006;
-        public static final int progress_Text=0x7f060005;
-        public static final int refresh=0x7f060004;
-        public static final int spinner1=0x7f060000;
-        public static final int station=0x7f06000e;
-        public static final int tableRow1=0x7f060009;
-        public static final int tableRow2=0x7f06000d;
-        public static final int tableRow3=0x7f06000f;
-        public static final int tableRow4=0x7f060011;
-        public static final int tableRow5=0x7f060012;
-        public static final int time=0x7f06000c;
-        public static final int title=0x7f060001;
-        public static final int views=0x7f060007;
-        public static final int widget0=0x7f060008;
+        public static final int alarm=0x7f06000f;
+        public static final int bookListView=0x7f060002;
+        public static final int connectionLost=0x7f060001;
+        public static final int date=0x7f06000a;
+        public static final int linearLayout1=0x7f060009;
+        public static final int linearLayout2=0x7f060012;
+        public static final int menu_settings=0x7f060013;
+        public static final int progress=0x7f060005;
+        public static final int progress_Text=0x7f060004;
+        public static final int refresh=0x7f060003;
+        public static final int station=0x7f06000d;
+        public static final int tableRow1=0x7f060008;
+        public static final int tableRow2=0x7f06000c;
+        public static final int tableRow3=0x7f06000e;
+        public static final int tableRow4=0x7f060010;
+        public static final int tableRow5=0x7f060011;
+        public static final int time=0x7f06000b;
+        public static final int title=0x7f060000;
+        public static final int views=0x7f060006;
+        public static final int widget0=0x7f060007;
     }
     public static final class layout {
-        public static final int activity_settings=0x7f030000;
-        public static final int alarmview=0x7f030001;
-        public static final int gradient=0x7f030002;
-        public static final int main=0x7f030003;
-        public static final int menu=0x7f030004;
-        public static final int row=0x7f030005;
-        public static final int textlines=0x7f030006;
+        public static final int alarmview=0x7f030000;
+        public static final int gradient=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int row=0x7f030003;
+        public static final int textlines=0x7f030004;
     }
     public static final class menu {
         public static final int activity_settings=0x7f050000;

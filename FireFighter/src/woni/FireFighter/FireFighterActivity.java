@@ -9,8 +9,6 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 
 public class FireFighterActivity extends Activity {
@@ -66,21 +64,11 @@ public class FireFighterActivity extends Activity {
         flinger.addView(createView("MZ", "Bereich Mürzzuschlag"));
         
         SharedPreferences settings = getSharedPreferences(SettingsFile, 0);
-
         String lastDistrict = settings.getString(LastSelectedDistrictKey, "RA");
         
         flinger.setCurrentScreen(viewCache.get(lastDistrict));
         
         onRefresh();
-    }
-    
-    // Initiating Menu XML file (menu.xml)
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.layout.menu, menu);
-        return true;
     }
     
     private View createView(String shortText, String longText){
