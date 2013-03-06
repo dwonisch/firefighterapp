@@ -1,6 +1,7 @@
 package woni.FireFighter;
 
 import java.util.Hashtable;
+import java.util.Map.Entry;
 
 import com.egoclean.android.widget.flinger.ViewFlinger;
 import com.egoclean.android.widget.flinger.ViewFlinger.OnScreenChangeListener;
@@ -46,34 +47,23 @@ public class FireFighterActivity extends Activity {
 			}
 		});
         
-        flinger.addView(createView("RA", "Bereich Radkersburg"));
-        flinger.addView(createView("VO", "Bereich Voitsberg"));
-        flinger.addView(createView("WZ", "Bereich Weiz"));
-        flinger.addView(createView("BM", "Bereich Bruck an der Mur"));
-        flinger.addView(createView("DL", "Bereich Deutschlandsberg"));
-        flinger.addView(createView("FB", "Bereich Feldbach"));
-        flinger.addView(createView("FF", "Bereich Fürstenfeld"));
-        flinger.addView(createView("GU", "Bereich Graz Umgebung"));
-        flinger.addView(createView("HB", "Bereich Hartberg"));
-        flinger.addView(createView("JU", "Bereich Judenburg"));
-        flinger.addView(createView("KF", "Bereich Knittelfeld"));
-        flinger.addView(createView("LB", "Bereich Leibnitz"));
-        flinger.addView(createView("LE", "Bereich Leoben"));
-        flinger.addView(createView("LI", "Bereich Liezen"));
-        flinger.addView(createView("MU", "Bereich Murau"));
-        flinger.addView(createView("MZ", "Bereich Mürzzuschlag"));
+        IConfiguration configuration = new Configuration();
+        
+        for (Entry<String, String> district : configuration.getDistricts().entrySet()) {
+        	flinger.addView(createView(district.getKey(), district.getValue(), configuration));
+        }
         
         SharedPreferences settings = getSharedPreferences(SettingsFile, 0);
-        String lastDistrict = settings.getString(LastSelectedDistrictKey, "RA");
+        String lastDistrict = settings.getString(LastSelectedDistrictKey, configuration.getDistricts().keys().nextElement());
         
         flinger.setCurrentScreen(viewCache.get(lastDistrict));
         
         onRefresh();
     }
     
-    private View createView(String shortText, String longText){
+    private View createView(String shortText, String longText, IConfiguration configuration){
     	if(!viewCache.containsKey(shortText)){
-	    	AlarmView view = new AlarmView(this,new District(shortText, longText));
+	    	AlarmView view = new AlarmView(this,new District(shortText, longText), configuration);
 	    	view.setLoadedListener(new AlarmViewLoadedListener() {
 				
 				public void onLoaded() {

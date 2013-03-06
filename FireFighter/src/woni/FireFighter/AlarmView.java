@@ -13,21 +13,20 @@ import android.widget.TextView;
 
 public class AlarmView extends LinearLayout {
 	Context context;
-	final String url;
+	private String url;
 	private ArrayList<AlarmViewLoadedListener> listeners = new ArrayList<AlarmViewLoadedListener>();
 	private Boolean isLoaded = false;
 	private String shortDistrictName;
+	private IConfiguration configuration;
 
-	public AlarmView(Context context, District district) {
+	public AlarmView(Context context, District district, IConfiguration configuration) {
 		super(context);
 		this.context = context;
 		LayoutInflater inflater = LayoutInflater.from(context);
 		inflater.inflate(R.layout.alarmview, this);
-		this.url = String
-				.format("http://178.188.171.236/rpweb/onlinestatus.aspx?form=EVENT&bez=%s",
-						district.getShortText());
-		
-		shortDistrictName = district.getShortText();
+		this.url = configuration.getUrl(district);
+		this.configuration = configuration;
+		this.shortDistrictName = district.getShortText();
 
 		TextView view = (TextView) findViewById(R.id.title);
 		view.setText(district.getLongText());
@@ -36,20 +35,14 @@ public class AlarmView extends LinearLayout {
 	public AlarmView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		this.context = context;
-		LayoutInflater inflater = LayoutInflater.from(context);
-		inflater.inflate(R.layout.alarmview, this);
-		this.url = "http://178.188.171.236/rpweb/onlinestatus.aspx?form=EVENT&bez=RA";
-
-		TextView view = (TextView) findViewById(R.id.title);
-		view.setText(url);
 	}
-
+	
 	public void onRefresh() {
 		isLoaded = true;
 		final View connectionlost = findViewById(R.id.connectionLost);
 		connectionlost.setVisibility(View.GONE);
 
-		RetreiveMissionsTask task = new RetreiveMissionsTask(context);
+		RetreiveMissionsTask task = new RetreiveMissionsTask(context, configuration);
 		task.setOnDocumentUpdateListener(new MissionReceivedListener() {
 
 			public void onCompleted(Context activity, List<Mission> missions) {
