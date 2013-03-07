@@ -18,6 +18,28 @@ public class Configuration implements IConfiguration {
 		Hashtable<String, String> districts = new Hashtable<String,String>();
 		
 		districts.put("01", "Bezirk Amstetten");
+		districts.put("02", "Bezirk Baden");
+		districts.put("03", "Bezirk Bruck/Leitha");
+		districts.put("04", "Bezirk Gänserndorf");
+		districts.put("05", "Bezirk Gmünd");
+		districts.put("061", "Abschnitt Klosterneuburg");
+		districts.put("062", "Abschnitt Purkersdorf");
+		districts.put("063", "Abschnitt Schwechat");
+		districts.put("07", "Bezirk Hollabrunn");
+		districts.put("08", "Bezirk Horn");
+		districts.put("09", "Bezirk Stockerau");
+		districts.put("10", "Bezirk Krems/Donau");
+		districts.put("11", "Bezirk Lilienfeld");
+		districts.put("12", "Bezirk Melk");
+		districts.put("13", "Bezirk Mistelbach");
+		districts.put("14", "Bezirk Mödling");
+		districts.put("15", "Bezirk Neunkirchen");
+		districts.put("17", "Bezirk St. Pölten");
+		districts.put("18", "Bezirk Scheibs");
+		districts.put("19", "Bezirk Tulln");
+		districts.put("20", "Bezirk Waidhofen/Thaya");
+		districts.put("21", "Bezirk Wr. Neustadt");
+		districts.put("22", "Bezirk Zwettl");
 		
 		return districts;
 	}
