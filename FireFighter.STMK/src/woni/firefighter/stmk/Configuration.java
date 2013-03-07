@@ -17,9 +17,6 @@ public class Configuration implements IConfiguration {
 	public Hashtable<String, String> getDistricts() {
 		Hashtable<String, String> districts = new Hashtable<String,String>();
 		
-		districts.put("RA", "Bereich Radkersburg");
-		districts.put("VO", "Bereich Voitsberg");
-		districts.put("WZ", "Bereich Weiz");
 		districts.put("BM", "Bereich Bruck an der Mur");
 		districts.put("DL", "Bereich Deutschlandsberg");
 		districts.put("FB", "Bereich Feldbach");
@@ -33,6 +30,9 @@ public class Configuration implements IConfiguration {
 		districts.put("LI", "Bereich Liezen");
 		districts.put("MU", "Bereich Murau");
 		districts.put("MZ", "Bereich Mürzzuschlag");
+		districts.put("RA", "Bereich Radkersburg");
+		districts.put("VO", "Bereich Voitsberg");
+		districts.put("WZ", "Bereich Weiz");
 		
 		return districts;
 	}
