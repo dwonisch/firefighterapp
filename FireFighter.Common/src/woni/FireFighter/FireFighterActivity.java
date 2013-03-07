@@ -54,7 +54,7 @@ public class FireFighterActivity extends Activity {
         }
         
         SharedPreferences settings = getSharedPreferences(SettingsFile, 0);
-        String lastDistrict = settings.getString(LastSelectedDistrictKey, configuration.getDistricts().keys().nextElement());
+        String lastDistrict = settings.getString(LastSelectedDistrictKey, configuration.getDistricts().keySet().iterator().next());
         
         flinger.setCurrentScreen(viewCache.get(lastDistrict));
         

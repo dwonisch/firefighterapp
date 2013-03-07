@@ -1,7 +1,7 @@
 package com.woni.firefighter.noe;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.jsoup.nodes.Document;
@@ -14,8 +14,8 @@ import woni.FireFighter.Mission;
 
 public class Configuration implements IConfiguration {
 
-	public Hashtable<String, String> getDistricts() {
-		Hashtable<String, String> districts = new Hashtable<String,String>();
+	public LinkedHashMap<String, String> getDistricts() {
+		LinkedHashMap<String, String> districts = new LinkedHashMap<String,String>();
 		
 		districts.put("01", "Bezirk Amstetten");
 		districts.put("02", "Bezirk Baden");
