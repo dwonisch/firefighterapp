@@ -1,6 +1,6 @@
-package woni.firefighter.stmk;
+package woni.FireFighter.stmk;
 
-import woni.FireFighter.FireFighterActivity;
+import woni.FireFighter.Common.FireFighterActivity;
 import android.os.Bundle;
 
 public class MainActivity extends FireFighterActivity {

@@ -1,6 +1,6 @@
 package com.woni.firefighter.noe;
 
-import woni.FireFighter.FireFighterActivity;
+import woni.FireFighter.Common.FireFighterActivity;
 import android.os.Bundle;
 
 public class MainActivity extends FireFighterActivity {

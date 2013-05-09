@@ -1,4 +1,4 @@
-package woni.firefighter.stmk;
+package woni.FireFighter.stmk;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -8,9 +8,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import woni.FireFighter.IConfiguration;
-import woni.FireFighter.District;
-import woni.FireFighter.Mission;
+import woni.FireFighter.Common.IConfiguration;
+import woni.FireFighter.Common.District;
+import woni.FireFighter.Common.Mission;
 
 public class Configuration implements IConfiguration {
 
