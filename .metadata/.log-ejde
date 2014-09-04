@@ -1,0 +1,13 @@
+19:31:55,417 TRACE [ContextManager] ContextManager starting, bundle version: 2.0.0.201207181003
+19:31:55,422 DEBUG [PropertyChangeListenerImp] Property change listener is enabled.
+19:31:55,658 TRACE [ContextManager] ContextManager startingneed update: true
+19:31:55,694 DEBUG [ComponentPackUtils] Starting Search for CPs
+19:31:55,778 DEBUG [ComponentPackUtils] CP named BlackBerry Java SDK version 7.1.0 was found at C:\Eclipse\plugins\net.rim.ejde.componentpack7.1.0_7.1.0.10\components
+19:31:55,897 DEBUG [RuntimeInstallsHandler] VM: *ADDED* [1349977312791$C:\Program Files\Java\jre7]
+19:31:55,899 TRACE [VMUtils] Attempting to create VM with name - BlackBerry JRE 7.1.0
+19:31:55,954 DEBUG [RuntimeInstallsHandler] VM: *ADDED* [BlackBerry JRE 7.1.0$C:\Eclipse\plugins\net.rim.ejde.componentpack7.1.0_7.1.0.10\components]
+19:31:55,960 DEBUG [UpgradingNotification] qualifier: 0
+19:31:55,965 TRACE [PropertyChangeListenerImp] openStartupOnEclpseFirstStart was changed from "false" to "false"
+19:31:56,172 DEBUG [BundleListenerHandler] Bundle [net.rim.ejde] is changing state to Started.
+19:32:05,355 DEBUG [BundleListenerHandler] Bundle [net.rim.ejde] is changing state to Stopping.
+19:32:05,357 DEBUG [PropertyChangeListenerImp] Property change listener is disabled.

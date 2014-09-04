@@ -1,0 +1,276 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.wst.common.modulecore,1.2.103.v201201190400,"org.eclipse.wst.common.modulecore",1350497409494
+started,bundle,org.eclipse.jst.j2ee.core,1.2.102.v201202090300,"org.eclipse.jst.j2ee.core",1350497409509
+started,bundle,org.eclipse.jem,2.0.501.v201111030500,"org.eclipse.jem",1350497409516
+started,bundle,org.eclipse.wst.common.frameworks.ui,1.2.100.v201105122000,"org.eclipse.wst.common.frameworks.ui",1350497409527
+started,bundle,org.eclipse.wst.validation,1.2.303.v201202090300,"org.eclipse.wst.validation",1350497409562
+started,bundle,org.eclipse.jst.j2ee,1.1.503.v201202090300,"org.eclipse.jst.j2ee",1350497409596
+started,bundle,org.eclipse.wst.jsdt.manipulation,1.0.300.v201104272153,"org.eclipse.wst.jsdt.manipulation",1350497409697
+started,bundle,org.eclipse.wst.jsdt.core,1.1.102.v201111090634,"org.eclipse.wst.jsdt.core",1350497409826
+started,bundle,org.eclipse.wst.jsdt.ui,1.1.102.v201201131900,"org.eclipse.wst.jsdt.ui",1350497410000
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497410580
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1350497410592
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497428771
+started,bundle,org.eclipse.wst.server.core,1.1.304.v20120208_1420,"org.eclipse.wst.server.core",1350497429529
+started,bundle,org.eclipse.wst.server.ui,1.3.0.v20120210_1439,"org.eclipse.wst.server.ui",1350497429543
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497430039
+executed,command,org.eclipse.ltk.ui.refactoring,3.6.0.v20110928-1453,"org.eclipse.ltk.ui.refactoring.commands.deleteResources",1350497430046
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1350497430047
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497431824
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497586970
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1350497587635
+started,bundle,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui",1350497589082
+started,bundle,org.eclipse.jdt.junit.core,3.7.0.v20110928-1453,"org.eclipse.jdt.junit.core",1350497589116
+started,bundle,org.eclipse.jdt.junit,3.7.0.v20110928-1453,"org.eclipse.jdt.junit",1350497589117
+started,bundle,org.eclipse.jdt.debug.ui,3.6.1.v20111006_r372,"org.eclipse.jdt.debug.ui",1350497589222
+executed,command,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui.commands.DebugLast",1350497589238
+started,bundle,com.android.ide.eclipse.ddms,20.0.3.v201208082019-427395,"com.android.ide.eclipse.ddms",1350497589335
+started,bundle,com.android.ide.eclipse.traceview,20.0.3.v201208082019-427395,"com.android.ide.eclipse.traceview",1350497589440
+opened,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1350497590521
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497592752
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497802321
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497804894
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497846433
+executed,command,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui.commands.DebugLast",1350497847708
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497850575
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497862135
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497863350
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497932379
+executed,command,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui.commands.DebugLast",1350497933205
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497933301
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497934842
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350497941127
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498149668
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1350498152533
+started,bundle,org.eclipse.wst.ws.service.policy.ui,1.0.300.v201108240515,"org.eclipse.wst.ws.service.policy.ui",1350498152685
+started,bundle,org.eclipse.wst.ws.service.policy,1.0.303.v201009221810,"org.eclipse.wst.ws.service.policy",1350498152687
+started,bundle,org.eclipse.wst.command.env,1.0.409.v201004211805,"org.eclipse.wst.command.env",1350498152701
+started,bundle,org.eclipse.wst.ws,1.1.203.v201004211805,"org.eclipse.wst.ws",1350498152701
+started,bundle,org.eclipse.compare,3.5.202.R37x_v20111109-0800,"org.eclipse.compare",1350498152781
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498154827
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.export",1350498170363
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.export",1350498170363
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498173817
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498174385
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498174456
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1350498176580
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498178972
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498739897
+activated,view,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.internal.introview",1350498742493
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1350498742525
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498745300
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498810227
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1350498811550
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498819201
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498830582
+started,bundle,org.eclipse.wst.sse.ui,1.3.2.v201201041522,"org.eclipse.wst.sse.ui",1350498830651
+started,bundle,org.eclipse.wst.xml.ui,1.1.202.v201112071516,"org.eclipse.wst.xml.ui",1350498830652
+started,bundle,org.eclipse.wst.xsl.core,1.1.100.v201102270516,"org.eclipse.wst.xsl.core",1350498830937
+started,bundle,org.eclipse.wst.xsl.exslt.core,1.0.0.v201005240426,"org.eclipse.wst.xsl.exslt.core",1350498830947
+started,bundle,org.eclipse.wst.dtd.ui,1.0.600.v201103171359,"org.eclipse.wst.dtd.ui",1350498831041
+started,bundle,org.eclipse.wst.xsl.ui,1.1.200.v201103082057,"org.eclipse.wst.xsl.ui",1350498831062
+error,log,,,"palette: Failed to find style 'autoCompleteTextViewStyle' in current theme",1350498832517
+error,log,,,"palette: Failed to find style 'autoCompleteTextViewStyle' in current theme",1350498832521
+error,log,,,"palette: Failed to find style 'autoCompleteTextViewStyle' in current theme",1350498832536
+error,log,,,"palette: Failed to find style 'autoCompleteTextViewStyle' in current theme",1350498832541
+error,log,,,"palette: Failed to find style 'autoCompleteTextViewStyle' in current theme",1350498832543
+error,log,,,"palette: Failed to find style 'buttonStyle' in current theme",1350498832546
+error,log,,,"palette: Failed to find style 'buttonStyle' in current theme",1350498832548
+error,log,,,"palette: Failed to find style 'buttonStyle' in current theme",1350498832550
+error,log,,,"palette: Failed to find style 'buttonStyle' in current theme",1350498832551
+error,log,,,"palette: Failed to find style 'buttonStyle' in current theme",1350498832553
+error,log,,,"palette: Failed to find style 'buttonStyle' in current theme",1350498832555
+error,log,,,"palette: Failed to find style 'checkboxStyle' in current theme",1350498832558
+error,log,,,"palette: Failed to find style 'checkboxStyle' in current theme",1350498832559
+error,log,,,"palette: Failed to find style 'checkboxStyle' in current theme",1350498832561
+error,log,,,"palette: Failed to find style 'checkboxStyle' in current theme",1350498832563
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498832568
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498832570
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498832572
+started,bundle,org.eclipse.jem.workbench,2.0.400.v201104251400,"org.eclipse.jem.workbench",1350498832579
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832592
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832594
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832596
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832598
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832599
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832605
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832606
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832608
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832610
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832611
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832613
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832614
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832616
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832617
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832619
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832621
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832622
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832624
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832625
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832627
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832629
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832630
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832632
+started,bundle,org.eclipse.wst.internet.cache,1.0.400.v201004280700,"org.eclipse.wst.internet.cache",1350498832633
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832634
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832635
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832637
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832639
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832641
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832643
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832645
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832646
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832648
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832650
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832652
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832654
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832659
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832661
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832663
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832665
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498832667
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498832669
+error,log,,,"",1350498832696
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498832743
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498832876
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832878
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832893
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832896
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498832898
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498832931
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498832935
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498832940
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832942
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832946
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498832948
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498832949
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498832953
+error,log,,,"palette: Failed to find style 'buttonStyle' in current theme",1350498832955
+error,log,,,"palette: Failed to find style 'buttonStyle' in current theme",1350498832956
+error,log,,,"palette: Failed to find style 'buttonStyle' in current theme",1350498832959
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833007
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833012
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498833014
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498833018
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498833020
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833021
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833026
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833028
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833032
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498833034
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498833037
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498833039
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833041
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833046
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833047
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833051
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498833052
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498833055
+error,log,,,"palette: Failed to find style 'editTextStyle' in current theme",1350498833057
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833059
+error,log,,,"palette: Failed to find style 'imageButtonStyle' in current theme",1350498833063
+error,log,,,"palette: Failed to find style 'tabWidgetStyle' in current theme",1350498833092
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833134
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833135
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833136
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833140
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833142
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833144
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833148
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833149
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833151
+error,log,,,"palette: Failed to find style 'tabWidgetStyle' in current theme",1350498833166
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833171
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833173
+error,log,,,"palette: Failed to find style 'textViewStyle' in current theme",1350498833174
+opened,editor,com.android.ide.eclipse.adt,20.0.3.v201208082019-427395,"com.android.ide.eclipse.editors.CommonXmlEditor",1350498833480
+activated,editor,com.android.ide.eclipse.adt,20.0.3.v201208082019-427395,"com.android.ide.eclipse.editors.CommonXmlEditor",1350498833600
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498833639
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498837281
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1350498837294
+activated,editor,com.android.ide.eclipse.adt,20.0.3.v201208082019-427395,"com.android.ide.eclipse.editors.CommonXmlEditor",1350498839143
+started,bundle,org.eclipse.mylyn.java.tasks,3.6.0.v20110608-1400,"org.eclipse.mylyn.java.tasks",1350498841148
+started,bundle,org.eclipse.jst.jsp.ui,1.1.602.v201112071516,"org.eclipse.jst.jsp.ui",1350498841156
+started,bundle,org.eclipse.jst.jsp.core,1.2.402.v201112071853,"org.eclipse.jst.jsp.core",1350498841191
+started,bundle,org.eclipse.wst.html.ui,1.0.602.v201202091936,"org.eclipse.wst.html.ui",1350498841209
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1350498841261
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350498841996
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498858595
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498872864
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1350498874281
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350498875036
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.delete",1350498881035
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350498883153
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1350498888307
+executed,command,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui.commands.DebugLast",1350498889386
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498894651
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498926828
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498927434
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498962044
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498964467
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498965169
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1350498970867
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1350498971699
+executed,command,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui.commands.DebugLast",1350498972518
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350498972936
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499006498
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1350499008526
+opened,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1350499012768
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1350499012854
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1350499017846
+executed,command,org.eclipse.ui.ide,3.7.0.v20110928-1505,"org.eclipse.jdt.ui.edit.text.java.correction.assist.proposals",1350499020462
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499022585
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499023825
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350499024842
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499025149
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499026275
+executed,command,org.eclipse.ui.ide,3.7.0.v20110928-1505,"org.eclipse.jdt.ui.edit.text.java.correction.assist.proposals",1350499028377
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350499030539
+executed,command,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui.commands.DebugLast",1350499031816
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499069376
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499108134
+activated,editor,com.android.ide.eclipse.adt,20.0.3.v201208082019-427395,"com.android.ide.eclipse.editors.CommonXmlEditor",1350499110082
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350499115663
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1350499118335
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1350499119474
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350499120080
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350499123063
+started,bundle,org.eclipse.wst.xsl.debug.ui,1.0.200.v201101281837,"org.eclipse.wst.xsl.debug.ui",1350499124572
+started,bundle,org.eclipse.wst.xsl.launching,1.0.200.v201103081922,"org.eclipse.wst.xsl.launching",1350499124623
+executed,command,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui.commands.DebugLast",1350499124633
+started,bundle,org.eclipse.wst.xsl.jaxp.launching,1.0.200.v201103081922,"org.eclipse.wst.xsl.jaxp.launching",1350499124654
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499124780
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499125868
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1350499127146
+executed,command,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui.commands.DebugLast",1350499128458
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1350499155988
+activated,editor,com.android.ide.eclipse.adt,20.0.3.v201208082019-427395,"com.android.ide.eclipse.editors.CommonXmlEditor",1350499157121
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350499166880
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350499172337
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499173089
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499174398
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350499191518
+activated,editor,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.CompilationUnitEditor",1350499226812
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350499244534
+activated,view,org.eclipse.jdt.ui,3.7.2.v20120109-1427,"org.eclipse.jdt.ui.PackageExplorer",1350499246688
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499264326
+started,bundle,org.eclipse.wst.dtd.core,1.1.501.v201107252021,"org.eclipse.wst.dtd.core",1350499313948
+started,bundle,org.eclipse.ant.ui,3.5.101.v20120110-1739,"org.eclipse.ant.ui",1350499330248
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350499330891
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.newWizard",1350499330901
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499331999
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499332001
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499332003
+opened,editor,com.android.ide.eclipse.adt,20.0.3.v201208082019-427395,"com.android.ide.eclipse.editors.CommonXmlEditor",1350499332072
+activated,editor,com.android.ide.eclipse.adt,20.0.3.v201208082019-427395,"com.android.ide.eclipse.editors.CommonXmlEditor",1350499332128
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499332254
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499332255
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499332257
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1350499350520
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499351585
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499351588
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499351592
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499401399
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499401401
+error,log,,,"activity_settings.xml: Failed to find style 'textViewStyle' in current theme",1350499401403
+error,log,,,"activity_settings.xml: Failed to find style 'spinnerStyle' in current theme",1350499401406

@@ -1,0 +1,94 @@
+package woni.FireFighter.Common;
+
+import java.util.Hashtable;
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
+
+import com.egoclean.android.widget.flinger.ViewFlinger;
+import com.egoclean.android.widget.flinger.ViewFlinger.OnScreenChangeListener;
+import com.woni.firefighter.common.R;
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class FireFighterActivity extends Activity {
+
+	private static String SettingsFile = "FireFighter.settings";
+	private static String LastSelectedDistrictKey = "LastSelectedDistrict";
+    protected IConfiguration configuration;
+    private AlarmView currentView;
+    private ViewPager pager;
+    private SectionsPagerAdapeter adapter;
+    
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        SharedPreferences settings = getSharedPreferences(SettingsFile, 0);
+        String lastDistrict = settings.getString(LastSelectedDistrictKey, configuration.getDistricts().keySet().iterator().next());
+        
+        // Create the adapter that will return a fragment for each of the three
+        // primary sections of the activity.
+        adapter = new SectionsPagerAdapter(getFragmentManager(), configuration.getDistricts());
+
+        // Set up the ViewPager with the sections adapter.
+        pager = (ViewPager) findViewById(R.id.pager);
+        pager.setAdapter(adapter);
+        
+        onRefresh();
+        
+       /* flinger.setOnScreenChangeListener(new OnScreenChangeListener() {
+			
+			public void onScreenChanging(View newScreen, int newScreenIndex) {
+				// TODO Auto-generated method stub
+			}
+			
+			public void onScreenChanged(View newScreen, int newScreenIndex) {
+				// TODO Auto-generated method stub
+				if(currentView != null)
+					currentView.cancel();
+				
+				if(newScreen != null){
+					AlarmView alarms = (AlarmView)newScreen;
+					currentView = alarms;
+					
+					if(!alarms.getIsLoaded())
+						onRefresh();
+					
+					SharedPreferences settings = getSharedPreferences(SettingsFile, 0);
+					Editor editor = settings.edit();
+					editor.putString(LastSelectedDistrictKey, alarms.getDistrict());
+					editor.commit();
+				}
+			}
+		});*/
+    }
+    
+	public void onRefresh(){
+		int current = pager.getCurrentItem();
+		onRefresh((AlarmView)flinger.getCurrentScreen());
+	}
+
+	public void onRefresh(View v){
+		onRefresh();
+    }
+	
+	private void onRefresh(AlarmView view){
+    	AlarmView v = view;
+    	v.onRefresh();
+	}
+	
+	public void onSettingsClick(View view){
+		
+	}
+}

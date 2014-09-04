@@ -1,16 +1,15 @@
 package woni.FireFighter.stmk;
 
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.LinkedHashMap;
-import java.util.List;
-
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import woni.FireFighter.Common.IConfiguration;
 import woni.FireFighter.Common.District;
 import woni.FireFighter.Common.Mission;
+import woni.FireFighter.Common.RetreiveMissionsTask;
 
 public class Configuration implements IConfiguration {
 
@@ -41,27 +40,42 @@ public class Configuration implements IConfiguration {
 		return String.format("http://178.188.171.236/rpweb/onlinestatus.aspx?form=EVENT&bez=%s", district.getShortText());
 	}
 
-	public List<Mission> parseMissions(Document document) {
-		Element centerElement = document.getElementsByTag("center").first();
-		Element table = centerElement.getElementsByTag("table").first();
-		Elements rows = table.getElementsByTag("tr");
-		List<Mission> missions = new ArrayList<Mission>();
-
-		for (Element row : rows) {
-			String[] fieldValues = new String[8];
-			Elements fields = row.getElementsByTag("td");
-			if (fields.size() > 0) {
-				int iterator = 0;
-
-				for (Element td : fields) {
-					fieldValues[iterator] = td.text();
-					iterator++;
+	public void parseMissions(RetreiveMissionsTask task, BufferedReader reader) {
+		
+		char[] buffer = new char[128];
+		StringBuilder builder = new StringBuilder(1024);
+		int length;
+		
+		Pattern pattern = Pattern.compile("<td>(([&\\.0-9A-Za-z :/ƒ÷‹‰ˆ¸ﬂ-]*)|(<img src='[A-Za-z\\.0-9/]*'>))</td>");
+		
+		int parsePosition = 0;
+		String[] resultBuffer = new String[8];
+		int resultCounter = 0;
+		
+		try {
+			while((length = reader.read(buffer)) > 0){
+				builder.append(buffer);
+				
+				Matcher matcher = pattern.matcher(builder);
+				while(matcher.find(parsePosition)){
+					resultBuffer[resultCounter] = matcher.group(1);
+					resultCounter++;
+					if(resultCounter == 8){
+						resultCounter = 0;
+						task.setItem(new Mission(resultBuffer));
+					}
+					parsePosition = matcher.end();
 				}
-				missions.add(new Mission(fieldValues));
+				
+				builder.delete(0, parsePosition);
+				parsePosition = 0;
+				
+				if(task.isCancelled()){
+					return;
+				}
 			}
+		} catch (IOException e) {
 		}
-
-		return missions;
 	}
 
 }

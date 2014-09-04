@@ -1,0 +1,74 @@
+package woni.FireFighter.Common;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.List;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+import android.content.Context;
+import android.os.AsyncTask;
+
+public class RetreiveMissionsTask extends AsyncTask<String, Mission, Void> {
+
+	private Exception exception;
+	private Context activity;
+	private MissionReceivedListener listener;
+	private IConfiguration configuration;
+
+	public RetreiveMissionsTask(Context activity, IConfiguration configuration) {
+		this.activity = activity;
+		this.configuration = configuration;
+	}
+
+	protected Void doInBackground(String... url) {
+		try {
+			Document document = Jsoup.connect(url[0]).timeout(10000).get();
+			
+			URL page = new URL(url[0]);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(page.openStream()));
+			char[] buffer = new char[128];
+			StringBuilder builder = new StringBuilder(1024);
+			int length;
+			while((length = reader.read(buffer)) > 0){
+				builder.append(buffer);
+			}
+			
+			reader.close();
+			
+			configuration.parseMissions(this, document);
+		} catch (Exception e) {
+			this.exception = e;
+		}
+		return null;
+	}
+	
+	protected void onProgressUpdate(Mission... values){
+		listener.onItemLoaded(activity, values[0]);
+	}
+
+	@Override
+	protected void onPostExecute(Void object) {
+		if(listener != null){
+			if (exception != null) {
+				listener.onFailed(activity, exception);
+			}
+			listener.onItemsCompleted(activity);
+		}
+	}
+	
+	protected void onSuccess(){
+		
+	}
+
+	public void setOnDocumentUpdateListener(MissionReceivedListener listener) {
+		this.listener = listener;
+	}
+
+	public void setItem(Mission mission) {
+		publishProgress(mission);
+	}
+
+}

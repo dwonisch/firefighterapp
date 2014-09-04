@@ -1,16 +1,17 @@
 package com.woni.firefighter.noe;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import android.content.Context;
+
 import woni.FireFighter.Common.District;
 import woni.FireFighter.Common.IConfiguration;
 import woni.FireFighter.Common.Mission;
+import woni.FireFighter.Common.MissionReceivedListener;
 
 public class Configuration implements IConfiguration {
 
@@ -48,11 +49,10 @@ public class Configuration implements IConfiguration {
 		return String.format("http://www.feuerwehr-krems.at/CodePages/Wastl/WastlMain/Land_EinsatzHistorie.asp?bezirk=%s", district.getShortText());
 	}
 
-	public List<Mission> parseMissions(Document document) {
+	public void parseMissions(Context activity, MissionReceivedListener listener, Document document) {
 		Element centerElement = document.getElementsByTag("body").first();
 		Element table = centerElement.getElementsByTag("table").first();
 		Elements rows = table.getElementsByTag("tr");
-		List<Mission> missions = new ArrayList<Mission>();
 
 		for (Element row : rows) {
 			String[] fieldValues = new String[5];
@@ -66,11 +66,9 @@ public class Configuration implements IConfiguration {
 				}
 				
 				String[] dateTime = fieldValues[4].split(" ");
-				missions.add(new Mission(dateTime[0], dateTime[1], fieldValues[3], fieldValues[2]));
+				listener.onItemLoaded(activity, new Mission(dateTime[0], dateTime[1], fieldValues[3], fieldValues[2]));
 			}
 		}
-
-		return missions;
 	}
 
 }

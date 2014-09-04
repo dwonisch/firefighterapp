@@ -1,0 +1,12 @@
+package woni.FireFighter.Common;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+
+import org.jsoup.nodes.Document;
+
+public interface IConfiguration {
+	LinkedHashMap<String, String> getDistricts();
+	String getUrl(District district);
+	void parseMissions(MissionReceivedListener listener, Document document);
+}

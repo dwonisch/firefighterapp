@@ -1,0 +1,46 @@
+package woni.FireFighter.Common;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+import android.content.Context;
+import android.os.AsyncTask;
+
+class RetreiveMissionsTask extends AsyncTask<String, Void, Void> {
+
+	private Exception exception;
+	private Context activity;
+	private MissionReceivedListener listener = new MissionReceivedListener;
+	private IConfiguration configuration;
+
+	public RetreiveMissionsTask(Context activity, IConfiguration configuration) {
+		this.activity = activity;
+		this.configuration = configuration;
+	}
+
+	protected List<Mission> doInBackground(String... url) {
+		try {
+			Document document = Jsoup.connect(url[0]).get();
+			configuration.parseMissions(listener, document);
+		} catch (Exception e) {
+			this.exception = e;
+			return new ArrayList<Mission>();
+		}
+	}
+
+	protected void onPostExecute(List<Mission> missions) {
+		for (MissionReceivedListener listener : listeners) {
+			if (exception != null) {
+				listener.onFailed(activity, exception);
+			}
+			listener.onItemsCompleted(activity);
+		}
+	}
+
+	public void setOnDocumentUpdateListener(MissionReceivedListener listener) {
+		this.listener = listener;
+	}
+}
