@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#B73D3D"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#DDDDDD"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
+
+        <LinearLayout
+            android:id="@+id/connectionLost"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:onClick="onRefresh"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/verbindung_fehlgeschlagen"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/zum_wiederholen_tippen"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+        
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        
+            <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="No Results"
+            android:id="@+id/empty_view"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textSize="20sp"
+            android:visibility="gone"/>
+
+
+        <ListView
+            android:id="@+id/bookListView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="#ffffff"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="3dp" >
+        </ListView>
+
+    </LinearLayout>
+
+</android.support.v4.widget.SwipeRefreshLayout>
+
+    </LinearLayout>

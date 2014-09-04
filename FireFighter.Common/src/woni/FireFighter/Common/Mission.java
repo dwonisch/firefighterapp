@@ -61,5 +61,22 @@ public class Mission{
 		return state;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if(o == null)
+			return false;
+		if(!(o instanceof Mission))
+			return false;
+		if(o == this)
+			return true;
+		
+		Mission other = (Mission)o;
+		
+		return station.equals(other.station) && date.equals(other.date) && time.equals(other.time);
+	}
 	
+	@Override
+	public int hashCode() {
+	      return 17 * station.hashCode() * date.hashCode() * time.hashCode();
+	}
 }

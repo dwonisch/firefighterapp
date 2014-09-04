@@ -28,6 +28,8 @@ public class RetreiveMissionsTask extends AsyncTask<String, Mission, Void> {
 	protected Void doInBackground(String... url) {
 		BufferedReader reader = null;
 		try {
+			listener.onClear(activity);
+			
 			URL page = new URL(url[0]);
 			System.out.println("Reading " + url[0]);
 			reader = new BufferedReader(new InputStreamReader(page.openStream()));
@@ -47,8 +49,10 @@ public class RetreiveMissionsTask extends AsyncTask<String, Mission, Void> {
 	}
 	
 	protected void onProgressUpdate(Mission... values){
-		System.out.println(String.format("Mission %s parsed at %s", values[0].station, new Date()));
-		listener.onItemLoaded(activity, values[0]);
+		if(!listener.onItemLoaded(activity, values[0])){
+			System.out.println("Aborting refresh because data is up to date.");
+			cancel(true); //Item already exists, stop loading of other items
+		}
 	}
 
 	@Override

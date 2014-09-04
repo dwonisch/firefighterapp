@@ -6,6 +6,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry kind="con" path="E:/Android/android-sdk22/sdk/tools/support"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry kind="lib" path="E:/Repositories/firefighter/test/libs/android-support-v13.jar"/>
+	<classpathentry kind="lib" path="E:/Repositories/firefighter/FireFighter.Common/libs/android-support-v13.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

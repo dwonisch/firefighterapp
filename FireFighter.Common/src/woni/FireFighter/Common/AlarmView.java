@@ -6,7 +6,9 @@ import java.util.List;
 
 import com.woni.firefighter.common.R;
 
+import android.R.color;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.util.AttributeSet;
@@ -24,6 +26,7 @@ public class AlarmView extends LinearLayout {
 	private Boolean isLoaded = false;
 	private String shortDistrictName;
 	private IConfiguration configuration;
+	private ArrayList<Mission> loadedMissions = new ArrayList<Mission>();
 	RetreiveMissionsTask task;
 	SwipeRefreshLayout swiper;
 
@@ -50,6 +53,7 @@ public class AlarmView extends LinearLayout {
 		view.setText(district.getLongText());
 		
 		swiper = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+		swiper.setColorSchemeColors(Color.parseColor("#B73D3D"), Color.parseColor("#D75D5D"), Color.parseColor("#F77D7D"), Color.parseColor("#FF9D9D"));
 		swiper.setOnRefreshListener(new OnRefreshListener() {
 			
 			public void onRefresh() {
@@ -63,26 +67,29 @@ public class AlarmView extends LinearLayout {
 			task.cancel(true);
 	}
 	
+	private int index;
+	
 	public void updateData() {
 		swiper.setRefreshing(true);
 		cancel();
 		
 		final View connectionlost = findViewById(R.id.connectionLost);
 		connectionlost.setVisibility(View.GONE);
-
-		ListView bookListView = (ListView) findViewById(R.id.bookListView);
-		bookListView.setAdapter(null);
-		
+	
 		cancel();
 		
 		task = new RetreiveMissionsTask(context, configuration);
 		
 		task.setOnDocumentUpdateListener(new MissionReceivedListener() {
 			public void onClear(Context activity) {
-
+				index = 0;
 			}
 			
-			public void onItemLoaded(Context activity, Mission mission){
+			public Boolean onItemLoaded(Context activity, Mission mission){
+				if(loadedMissions.contains(mission)){
+					return false;  //Item is already there
+				}
+				
 				System.out.println(String.format("Mission %s displaying at %s", mission.station, new Date()));
 				ListView bookListView = (ListView) findViewById(R.id.bookListView);
 					
@@ -94,9 +101,13 @@ public class AlarmView extends LinearLayout {
 					adapter = newAdapter;
 				}
 				
-				((ListItemAdapter)adapter).add(mission);
+				
+				((ListItemAdapter)adapter).insert(mission, index);
+				index++;
 				((ListItemAdapter)adapter).notifyDataSetChanged();
-				System.out.println(String.format("Mission %s displayed at %s", mission.station, new Date()));
+
+				loadedMissions.add(mission);
+				return true;
 			}
 			
 			public void onItemsCompleted(Context activity){

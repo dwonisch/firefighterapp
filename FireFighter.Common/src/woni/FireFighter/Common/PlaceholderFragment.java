@@ -47,7 +47,7 @@ public class PlaceholderFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		if(view == null){
 			view = new AlarmView(context, new District(key, district), configuration);
-			//view.updateData();
+			view.updateData();
 		}
     	return view;
 	}

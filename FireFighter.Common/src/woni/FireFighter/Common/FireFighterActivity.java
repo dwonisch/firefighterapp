@@ -1,7 +1,9 @@
 package woni.FireFighter.Common;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.LinkedHashMap;
+import java.util.Set;
 import java.util.Map.Entry;
 
 import com.egoclean.android.widget.flinger.ViewFlinger;
@@ -35,8 +37,10 @@ public class FireFighterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        final ArrayList<String> keys = new ArrayList<String>(configuration.getDistricts().keySet());
+        
         SharedPreferences settings = getSharedPreferences(SettingsFile, 0);
-        String lastDistrict = settings.getString(LastSelectedDistrictKey, configuration.getDistricts().keySet().iterator().next());
+        String lastDistrict = settings.getString(LastSelectedDistrictKey, keys.get(0));
         
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -48,8 +52,16 @@ public class FireFighterActivity extends Activity {
         
         pager.setOnPageChangeListener(new OnPageChangeListener() {
             public void onPageSelected(int position) {
+				SharedPreferences settings = getSharedPreferences(SettingsFile, 0);
+				Editor editor = settings.edit();
+				editor.putString(LastSelectedDistrictKey, keys.get(position));
+				editor.commit();	
+            	
             	AlarmView view = (AlarmView) pager.getChildAt(position);
-            	view.updateData();
+            	
+            	if(view != null) {
+            		view.updateData();
+            	}
             }
 
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -61,33 +73,7 @@ public class FireFighterActivity extends Activity {
             }
         });
         
-        onRefresh();
-        
-       /* flinger.setOnScreenChangeListener(new OnScreenChangeListener() {
-			
-			public void onScreenChanging(View newScreen, int newScreenIndex) {
-				// TODO Auto-generated method stub
-			}
-			
-			public void onScreenChanged(View newScreen, int newScreenIndex) {
-				// TODO Auto-generated method stub
-				if(currentView != null)
-					currentView.cancel();
-				
-				if(newScreen != null){
-					AlarmView alarms = (AlarmView)newScreen;
-					currentView = alarms;
-					
-					if(!alarms.getIsLoaded())
-						onRefresh();
-					
-					SharedPreferences settings = getSharedPreferences(SettingsFile, 0);
-					Editor editor = settings.edit();
-					editor.putString(LastSelectedDistrictKey, alarms.getDistrict());
-					editor.commit();
-				}
-			}
-		});*/
+        pager.setCurrentItem(keys.indexOf(lastDistrict));
     }
     
 	public void onRefresh(){
