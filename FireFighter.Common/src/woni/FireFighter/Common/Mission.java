@@ -1,5 +1,8 @@
 package woni.FireFighter.Common;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Mission{
 
 	String image;
@@ -10,6 +13,9 @@ public class Mission{
 	String station;
 	String count;
 	String state;
+	Boolean onDuty = false;
+	ArrayList<String> units;
+	
 	
 	public Mission(String[] fields){
 		this.image = fields[0];
@@ -19,7 +25,17 @@ public class Mission{
 		this.alarm = fields[4];
 		this.station = fields[5];
 		this.count = fields[6];
-		this.state = fields[7];
+		this.units = new ArrayList<String>();
+		
+		String currentState = fields[7];
+		
+		if(currentState.equals("<img src='LLZ/9.png'>")){
+			this.state = "Im Einsatz";
+			this.onDuty = true;
+		}else if (currentState.equals("<img src='LLZ/99.png'>"))
+			this.state = "Einsatz beendet";
+		else
+			this.state = "";
 	}
 	
 	public Mission(String date, String time, String alarm, String station) {
@@ -60,6 +76,10 @@ public class Mission{
 	public String getState(){
 		return state;
 	}
+	
+	public Boolean getOnDuty(){
+		return onDuty;
+	}
 
 	@Override
 	public boolean equals(Object o) {
@@ -78,5 +98,14 @@ public class Mission{
 	@Override
 	public int hashCode() {
 	      return 17 * station.hashCode() * date.hashCode() * time.hashCode();
+	}
+
+	public void setUnits(ArrayList<String> units) {
+		this.units = units;
+		
+	}
+	
+	public ArrayList<String> getUnits(){
+		return this.units;
 	}
 }

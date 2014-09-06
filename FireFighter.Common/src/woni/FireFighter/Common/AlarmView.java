@@ -8,6 +8,8 @@ import com.woni.firefighter.common.R;
 
 import android.R.color;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
@@ -21,22 +23,21 @@ import android.widget.TextView;
 
 public class AlarmView extends LinearLayout {
 	Context context;
-	private String url;
+	private String[] url;
 	private ArrayList<AlarmViewLoadedListener> listeners = new ArrayList<AlarmViewLoadedListener>();
 	private Boolean isLoaded = false;
 	private String shortDistrictName;
 	private IConfiguration configuration;
+	
 	private ArrayList<Mission> loadedMissions = new ArrayList<Mission>();
 	RetreiveMissionsTask task;
 	SwipeRefreshLayout swiper;
+	private District district;
 
-	public AlarmView(Context context, District district, IConfiguration configuration) {
+	public AlarmView(Context context, District district) {
 		super(context);
 		this.context = context;
-		LayoutInflater inflater = LayoutInflater.from(context);
-		inflater.inflate(R.layout.alarmview, this);
-		
-		Initialize(district, configuration);
+		this.district = district;
 	}
 
 	public AlarmView(Context context, AttributeSet attrs) {
@@ -44,22 +45,44 @@ public class AlarmView extends LinearLayout {
 		this.context = context;
 	}
 	
-	public void Initialize(District district, IConfiguration configuration){
+	public void Initialize(Context context, IConfiguration configuration){
+		LayoutInflater inflater = LayoutInflater.from(context);
+		inflater.inflate(R.layout.alarmview, this);
+		
+		this.context = context;
+		
 		this.url = configuration.getUrl(district);
 		this.configuration = configuration;
+		final IConfiguration config = configuration;
 		this.shortDistrictName = district.getShortText();
 
+		if(config.getHintEnabled()){
+		config.setOnHintChanged(new HintChangedListener(){
+
+			public void onHintChanged(Boolean value) {
+				HideHint();
+			}});
+		} else {
+			HideHint();
+		}
+		
 		TextView view = (TextView) findViewById(R.id.title);
 		view.setText(district.getLongText());
 		
 		swiper = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 		swiper.setColorSchemeColors(Color.parseColor("#B73D3D"), Color.parseColor("#D75D5D"), Color.parseColor("#F77D7D"), Color.parseColor("#FF9D9D"));
 		swiper.setOnRefreshListener(new OnRefreshListener() {
-			
 			public void onRefresh() {
 				updateData();
+				if(config != null)
+					config.setHintEnabled(false);
 			}
 		});
+	}
+	
+	private void HideHint(){
+		View view = findViewById(R.id.hint);
+		view.setVisibility(View.GONE);
 	}
 	
 	public void cancel(){
@@ -70,30 +93,35 @@ public class AlarmView extends LinearLayout {
 	private int index;
 	
 	public void updateData() {
-		swiper.setRefreshing(true);
 		cancel();
 		
+		swiper.setRefreshing(true);
+
 		final View connectionlost = findViewById(R.id.connectionLost);
 		connectionlost.setVisibility(View.GONE);
-	
-		cancel();
 		
 		task = new RetreiveMissionsTask(context, configuration);
-		
+
 		task.setOnDocumentUpdateListener(new MissionReceivedListener() {
 			public void onClear(Context activity) {
 				index = 0;
 			}
 			
 			public Boolean onItemLoaded(Context activity, Mission mission){
-				if(loadedMissions.contains(mission)){
-					return false;  //Item is already there
-				}
-				
 				System.out.println(String.format("Mission %s displaying at %s", mission.station, new Date()));
 				ListView bookListView = (ListView) findViewById(R.id.bookListView);
-					
-				ListAdapter adapter = bookListView.getAdapter();
+				ListItemAdapter adapter = (ListItemAdapter)bookListView.getAdapter();
+				
+				if(index == 0){
+					if(adapter != null)
+						adapter.clear();
+					loadedMissions.clear();
+				}
+				
+				if(loadedMissions.contains(mission)){
+					adapter.notifyDataSetChanged();
+					return true;  //Item is already there
+				}
 				
 				if(adapter == null){
 					ListItemAdapter newAdapter = new ListItemAdapter(activity, R.layout.row);
@@ -101,11 +129,10 @@ public class AlarmView extends LinearLayout {
 					adapter = newAdapter;
 				}
 				
-				
-				((ListItemAdapter)adapter).insert(mission, index);
+				adapter.insert(mission, index);
+				adapter.notifyDataSetChanged();
 				index++;
-				((ListItemAdapter)adapter).notifyDataSetChanged();
-
+				
 				loadedMissions.add(mission);
 				return true;
 			}
@@ -139,6 +166,7 @@ public class AlarmView extends LinearLayout {
 		}
 		if(swiper != null)
 			swiper.setRefreshing(false);
+		task = null;
 	}
 	
 	public String getDistrict(){

@@ -4,32 +4,36 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.content.Context;
-import android.support.v13.app.FragmentPagerAdapter;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.woni.firefighter.common.R;
-
-public class SectionsPagerAdapter extends FragmentPagerAdapter {
+public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
 	private LinkedHashMap<String,String> data;
 	private List<String> keys;
 	private List<String> values;
 	private IConfiguration configuration;
-	private Context context;
+	private FragmentManager manager;
+	private Fragment[] fragments;
 	
-    public SectionsPagerAdapter(Context context, FragmentManager manager, LinkedHashMap<String,String> data, IConfiguration configuration) {
+    public SectionsPagerAdapter(FragmentManager manager, LinkedHashMap<String,String> data, IConfiguration configuration) {
         super(manager);
         this.data = data;
         this.configuration = configuration;
         values = new ArrayList<String>(data.values());
         keys = new ArrayList<String>(data.keySet());
-        this.context = context;
+        fragments = new Fragment[data.size()];
     }
 
     @Override
     public Fragment getItem(int position) {
-        return PlaceholderFragment.newInstance(context, position +1, keys.get(position), values.get(position), configuration);
+    	Fragment fragment = new PlaceholderFragment(position+1, new District(keys.get(position), values.get(position)));
+    	fragments[position] = fragment;
+    	return fragment;
+    }
+    
+    public Fragment get(int position){
+    	return fragments[position];
     }
 
     @Override

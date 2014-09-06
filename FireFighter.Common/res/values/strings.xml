@@ -10,5 +10,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_settings">FireFighter1.4</string>
+    <string name="hint">Wische mit dem Finger nach unten um neue Einsätze zu aktualisieren</string>
 
 </resources>

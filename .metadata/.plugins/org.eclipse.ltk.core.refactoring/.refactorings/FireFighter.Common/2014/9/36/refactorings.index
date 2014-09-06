@@ -3,3 +3,8 @@
 1409776719450	Rename resource 'PlaceHolderFragment'
 1409776735944	Rename compilation unit 'PlaceHolderFragment.java'
 1409835642767	Rename method 'onRefresh'
+1409997352985	Extract method 'CreateMissionReader'
+1409997382231	Rename local variable 'reader'
+1410026885275	Rename type 'RefreshListener'
+1410031381129	Rename method 'getLinke'
+1410031949324	Rename method 'getKey'
